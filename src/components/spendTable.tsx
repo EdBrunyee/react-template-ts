@@ -1,7 +1,7 @@
 import { spendTableProps } from "../types"
 
 
-export const SpendTable: React.FC<spendTableProps> = ({spendData }) => {
+export const SpendTable: React.FC<spendTableProps> = ({ spendData }) => {
 
   const headers = spendData.length > 0 ? Object.keys(spendData[0]) : [];
   

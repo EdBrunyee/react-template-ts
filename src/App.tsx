@@ -2,14 +2,26 @@ import React, { useState, useEffect } from "react";
 import { spendDataArrayProps } from "./types";
 import HeaderComponent from "./components/header";
 import { SpendTable } from "./components/spendTable";
-import { data } from "./data"; 
 
 const App: React.FC = () => {
   const [spendData, setSpendData] = useState<spendDataArrayProps>([]);
 
   useEffect(() => {
-    // Strangly thunderclient is working but fetch not so Simulating fetching data from an API
-    setSpendData(data);
+
+    const fetchSpendData = async () => {
+      const response = await fetch('https://expenses-backend-mu.vercel.app/expenses', {
+        method: 'GET',
+        headers: {
+          'Username': 'edward.brunyee'
+        }
+      })
+      const json = await response.json()
+
+      if (response.ok) {
+        setSpendData(json)
+      }
+    }
+    fetchSpendData()
   }, []);
 
   return (
