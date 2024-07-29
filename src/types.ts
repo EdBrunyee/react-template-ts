@@ -14,7 +14,6 @@ export type spendDataProps = {
 
 export type spendDataArrayProps = spendDataProps[]
 
-
 export type spendTableProps = {
   spendData: spendDataArrayProps,
   SetSpendData: React.Dispatch<SetStateAction<spendDataArrayProps>>

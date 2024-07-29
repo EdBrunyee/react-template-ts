@@ -3,7 +3,6 @@ import { spendDataArrayProps } from "./types";
 import HeaderComponent from "./components/header";
 import { SpendTable } from "./components/spendTable";
 import { data } from "./data"; 
-import './App.css'
 
 const App: React.FC = () => {
   const [spendData, setSpendData] = useState<spendDataArrayProps>([]);
